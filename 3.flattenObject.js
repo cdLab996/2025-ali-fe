@@ -1,3 +1,26 @@
+// 题目3：实现一个函数 flattenObject
+// 编写一个函数 flattenObject，接受一个嵌套对象作为参数，将其扁平化为一个单层对象。扁平化后的对象的键应为原对象键的路径，使用点号（.）连接。
+// 示例：
+// javascript
+
+// const obj = {
+//   a: 1,
+//   b: {
+//     c: 2,
+//     d: {
+//       e: 3,
+//       f: 4,
+//     },
+//   },
+//   g: 5,
+// };
+
+// const flattened = flattenObject(obj);
+// console.log(flattened);
+// 输出：
+// JavaScript
+// 复制代码
+
 function flattenObject(obj, prefix = '', result = {}) {
   // 遍历对象的所有键
   for (const key in obj) {

@@ -1,3 +1,21 @@
+// 题目2：实现一个异步任务调度器
+// 编写一个 TaskScheduler 类，用于限制同时执行的异步任务数量。具体要求如下：
+// TaskScheduler 构造函数接受一个参数 concurrency，表示同时执行的最大任务数量。
+// TaskScheduler 提供一个 addTask 方法，用于添加异步任务。任务是一个返回 Promise 的函数。
+// 当任务数量超过 concurrency 时，多余的任务需要排队等待，直到有任务完成后再执行。
+// 任务完成后，返回任务的结果。
+// 示例：
+
+// const scheduler = new TaskScheduler(2);
+
+// const task1 = () => new Promise(resolve => setTimeout(() => resolve('Task 1'), 1000));
+// const task2 = () => new Promise(resolve => setTimeout(() => resolve('Task 2'), 500));
+// const task3 = () => new Promise(resolve => setTimeout(() => resolve('Task 3'), 300));
+// const task4 = () => new Promise(resolve => setTimeout(() => resolve('Task 4'), 200));
+
+// scheduler.addTask(task1).then(result => console.log(result)); // 输出: Task 1
+// scheduler.addTask(task2).then(result => console.log(res
+
 class TaskScheduler {
   constructor(concurrency) {
     this.concurrency = concurrency; // 最大并发任务数
